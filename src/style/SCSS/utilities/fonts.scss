@@ -1,0 +1,58 @@
+.title {
+    &-large {
+        font-weight: 100;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+
+        @include media-min($tablet) {
+            font-size: 1.2rem;
+        }
+
+        .title-xl {
+            display: block;
+            font-weight: 200;
+            margin-bottom: 10px;
+
+            @include media-max($tablet) {
+                font-size: 3rem;
+            }
+
+            @include media-min($tablet) {
+                font-size: 8rem;
+                line-height: 8rem;
+            }
+        }
+    }
+
+    &-medium {
+        align-items: center;
+        font-weight: 300;
+        margin: 20px 0 20px -1px;
+        font-size: 1.6rem;
+            
+        &::after {
+            content: '';
+            display: block;
+            width: calc(80px + 7.5vw);
+            transform: translate(-7.5vw, 5px);
+            height: 2px;
+            background-color: $primary;
+        }
+    }
+
+    &-small {
+        font-size: 1.3rem;
+        font-weight: 300;
+        margin-bottom: 20px;
+
+        &:not(.home .title-small) {
+            color: $secondary;
+        }
+    }
+
+    &-xs {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+}

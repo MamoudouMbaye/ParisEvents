@@ -1,0 +1,51 @@
+.card {
+
+    &-container {
+      display: grid;
+      gap: 50px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      max-width: 80%;
+      margin: 60px auto 0;
+    }
+  
+    height: auto;
+  
+    &:not(.home .card) {
+      max-width: 300px;
+      margin-bottom: 80px;
+    }
+  
+    &-description {
+      font-size: .75rem;
+    }
+  
+    img {
+      width: 100%;
+      object-fit: cover;
+  
+      &:not(.home .card img) {
+        margin-top: 20px;
+      }
+    }
+  
+    .flex {
+      display: flex;
+  
+      &:not(.home .card .flex) {
+        margin: 0 10px 20px 0;
+        align-items: center;
+      }
+    }
+  
+    &__like-button {
+      font-size: 1.1rem;
+  
+      svg {
+        flex-shrink: 0;
+      }
+  
+      &:not(.home .card__like-button, .event .card__like-button) {
+        margin-right: 10px;
+      }
+    }
+  }

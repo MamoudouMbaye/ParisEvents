@@ -1,0 +1,14 @@
+.search {
+    &-bar__container {
+        input,
+        button {
+            height: 56px;
+            margin: 10px 0 40px;
+            padding: 0 20px;
+        }
+
+        button {
+            background-color: $color-blue #002542; 
+        }
+    }
+}

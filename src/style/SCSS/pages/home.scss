@@ -1,0 +1,137 @@
+  
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: $base-1;
+}
+
+.home {
+    &-main {
+        display: grid;
+
+        &>.flex {
+            align-self: end;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+
+            @include media-max($tablet) {
+                flex-direction: column;
+            }
+
+            &>div:first-child p {
+                @include media-min($tablet) {
+                    margin-right: 50px;
+                }
+            }
+
+        }
+    }
+
+    @include media-min($tablet) {
+        .title-xl {
+            margin-left: -12px;
+        }
+
+        h2 {
+            max-width: 30vw;
+            min-width: 400px;
+        }
+    }
+
+    .card {
+        display: grid;
+        align-items: center;
+
+        @include media-max($tablet) {
+            width: 100%;
+        }
+
+        @include media-min($tablet) {
+            width: 500px;
+        }
+
+        margin-left: auto;
+
+        &>* {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        figcaption,
+        img {
+            @include media-max($tablet) {
+                width: 100%;
+                margin-top: 50px;
+            }
+
+            @include media-min($tablet) {
+                width: 500px;
+            }
+
+            height: 280px;
+            overflow: hidden;
+        }
+
+        img {
+            box-shadow: 0 0 20px rgba($base-3, .5);
+        }
+
+        figcaption {
+            display: grid;
+            align-items: center;
+            z-index: 1;
+            text-align: right;
+            background-color: rgba($primary, .7);
+            backdrop-filter: blur(5px);
+            @include media-max($tablet) {
+                padding: 24px;
+            }
+            @include media-min($tablet) {
+                padding: 40px;
+            }
+            transition: all .3s;
+
+            &:hover {
+                backdrop-filter: blur(1px);
+            }
+
+            .flex {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .card__like-button {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .title-small {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                @include media-max($mobile) {
+                    font-size: 1.2rem;
+                    -webkit-line-clamp: 4;
+                }
+                @include media-min($mobile) {
+                    -webkit-line-clamp: 2;
+                }
+            }
+
+            .card-description {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+
+                @include media-max($mobile) {
+                    -webkit-line-clamp: 4;
+                }
+
+                @include media-min($mobile) {
+                    -webkit-line-clamp: 5;
+                }
+            }
+        }
+    }
+}
